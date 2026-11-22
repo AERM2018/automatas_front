@@ -1,4 +1,3 @@
-import React from "react";
 import { automatas } from "../db/automatas";
 const TransitionTable = (props) => {
   const { automataID } = props;
@@ -13,21 +12,21 @@ const TransitionTable = (props) => {
               <tr>
                 <th></th>
                 {automata.symbols.map((el) => (
-                  <th>{`${el}`}</th>
+                  <th key={el}>{`${el}`}</th>
                 ))}
               </tr>
             </thead>
             <tbody>
               {automata.states.map((state) => {
                 return (
-                  <tr>
+                  <tr key={state}>
                     <th>{`${state}`}</th>
                     {automata.symbols.map((sigma) => {
                       const stateTransitions = automata.transitions.find(
                         (t) => t.state === state && t.symbol === sigma
                       );
                       return (
-                        <td>{`${
+                        <td key={sigma}>{`${
                           stateTransitions !== undefined
                             ? `${stateTransitions.toState}`
                             : "-"

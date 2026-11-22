@@ -15,16 +15,16 @@ export const WordTester = (props) => {
       <h4>Test a word</h4>
       <div className="row">
         <div className="col-3">
-          <div class="input-group ">
+          <div className="input-group ">
             <input
               name="word"
               type="text"
-              class="form-control"
+              className="form-control"
               placeholder="Type a word "
               onChange={handleInputChange}
             />
             <button
-              class="btn btn-primary"
+              className="btn btn-primary"
               type="button"
               onClick={handleTestWord}
             >
